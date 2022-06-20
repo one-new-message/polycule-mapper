@@ -1,0 +1,21 @@
+<div class="editor" id="editor">
+    <div>
+        <h3>Edit System</h3>
+        <table class="editortable">
+            <tr>
+                <th>Basic Information</th>
+                <th>Members</th>
+            </tr>
+            <tr>
+                <td>
+                    <p>ID:</p>
+                    <p><input class="new-input" id="edit-id" readonly></p>
+                    <p>Name:</p>
+                    <p><input placeholder="Name" class="new-input" id="edit-name"></p>
+                    <p><button onclick="updateSystem()" id="updatesystem">Update</button><button class="buttongray" onclick="closeEditor()">Cancel</button></p>
+                </td>
+                <td id="editor-members"></td>
+            </tr>
+        </table>
+    </div>
+</div>

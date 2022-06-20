@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Polycule Mapper</title>
+        <script src="js/navigation.js"></script>
+        <script src="js/function.js"></script>
+        <script src="js/editor.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body onload="document.getElementById('defaultOpen').click()">
+        <div class="menubar">
+            <div class="dropdown">
+                <button class="menubaritem" onclick="openMenuDropdown('menufiledropdown')" onmouseover="changeMenuDropdown('menufiledropdown')" id="menufile">File</button>
+                <div id="menufiledropdown" class="dropdown-content">
+                    <a class="dropdownitem" onclick="openFilePrompt()" id="fileopen">Open</a>
+                    <a class="dropdownitem" onclick="saveFilePrompt()" id="filesave">Save</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="menubaritem" onclick="openMenuDropdown('menueditdropdown')" onmouseover="changeMenuDropdown('menueditdropdown')" id="menuedit">Edit</button>
+                <div id="menueditdropdown" class="dropdown-content">
+                    <a class="dropdownitem" onclick="openMenuDropdownItem('Undo')" id="editundo">Undo</a>
+                    <a class="dropdownitem" onclick="openMenuDropdownItem('Redo')" id="editredo">Redo</a>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <h1>Polycule Mapper</h1>
+        </div>
+        <div class="tab">
+            <button class="tablinks" onclick="openPage(event, 'People')" id="defaultOpen">People</button>
+            <button class="tablinks" onclick="openPage(event, 'Systems')">Systems</button>
+            <button class="tablinks" onclick="openPage(event, 'Polycules')">Polycules</button>
+            <button class="tablinks" onclick="openPage(event, 'Map')">Map</button>
+        </div>
+
+        <div id="People" class="tabcontent">
+            <h2>People</h2>
+            <div class="tabtop">
+                <h3>Add Person</h3>
+                <p>Add a new person by providing a name and pronouns.</p>
+                <input placeholder="Name" class="new-input" id="newperson-name">
+                <input placeholder="Pronouns" class="new-input" id="newperson-pronouns">
+                <p><button onclick="addPerson()" id="addperson">Add Person</button></p>
+                <p>Click names to edit.</p>
+            </div>
+            <div id="peoplediv">
+                <table class="itemtable" id="persontable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Pronouns</th>
+                        <th>Systems</th>
+                        <th>Polycules</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="Systems" class="tabcontent">
+            <h2>Systems</h2>
+            <div class="tabtop">
+                <h3>Add System</h3>
+                <p>Add a new empty system by giving it a name.</p>
+                <input placeholder="System Name" class="new-input" id="newsystem-name">
+                <p><button onclick="addSystem()" id="addsystem">Add System</button></p>
+                <p>Click names to edit.</p>
+            </div>
+            <div id="systemsdiv">
+                <table class="itemtable" id="systemtable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Members</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="Polycules" class="tabcontent">
+            <h2>Polycules</h2>
+            <div class="tabtop">
+                <h3>Add Polycule</h3>
+                <p>Add a new empty polycule by giving it a name.</p>
+                <input placeholder="Polycule Name" class="new-input" id="newpolycule-name">
+                <p><button onclick="addPolycule()" id="addpolycule">Add Polycule</button></p>
+                <p>Click names to edit.</p>
+            </div>
+            <div id="polyculesdiv">
+                <table class="itemtable" id="polyculetable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Number of Members</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="Map" class="tabcontent">
+            <h2>Map</h2>
+            <p>Work in progress.</p>
+        </div>
+  </body>
+</html>
